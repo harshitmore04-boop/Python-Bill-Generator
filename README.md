@@ -2,45 +2,54 @@
 
 **Mini Project – Python Programming (3rd Semester)**
 
-A console-based supermarket billing application developed in Python. It allows a customer to select products and quantities, calculates item-wise GST, and prints an itemized receipt.
+A Python supermarket billing project with both a console version and a graphical billing dashboard.
 
-## Features
+## Versions
 
-- Product catalogue containing product ID, name, unit price, and GST percentage.
-- Customer name, product IDs, and quantities as input.
-- Item-wise base cost and GST calculation.
-- Subtotal, total GST, and final payable amount.
-- Formatted console bill using Python f-strings.
-- Invalid product IDs are skipped with a warning.
-- Checks that the number of product IDs matches the number of quantities.
+- **Console application:** `bill_generator.py`
+- **Graphical dashboard:** `dashboard.py` (Tkinter)
+
+## Dashboard Features
+
+- Select products from a drop-down list and enter quantities.
+- Add products to a shopping cart; repeated selections combine quantities.
+- Live dashboard cards for item count, subtotal, GST, and total payable.
+- Remove selected items or clear the cart.
+- Generate a receipt preview and save the receipt as a text file.
+- Validates quantities and handles empty-cart actions.
 
 ## Requirements
 
 - Python 3.8 or later
-- No external packages required.
+- Tkinter (included with most standard Windows Python installations)
+- No third-party packages required
 
-## How to Run
+## Run the Dashboard in VS Code
 
-1. Clone or download this repository.
-2. Open a terminal in the project folder.
-3. Run:
+1. Download or clone this repository.
+2. Open the repository folder in VS Code.
+3. Open **Terminal → New Terminal**.
+4. Run:
 
-   ```bash
-   python bill_generator.py
+   ```powershell
+   python dashboard.py
    ```
 
-4. Enter the customer name.
-5. Enter product IDs as a Python list, for example:
+   On Windows, you can also run:
 
-   ```python
-   ['P1', 'P3', 'P5']
+   ```powershell
+   py dashboard.py
    ```
 
-6. Enter quantities in the same order, for example:
+5. The FreshMart Billing Dashboard window will open.
 
-   ```python
-   [2, 1, 1]
-   ```
+You can also double-click `RUN_DASHBOARD.bat` on Windows.
+
+## Run the Console Version
+
+```powershell
+python bill_generator.py
+```
 
 ## Product Catalogue
 
@@ -55,23 +64,14 @@ A console-based supermarket billing application developed in Python. It allows a
 | P7 | Chocolate Box | 249.00 | 18% |
 | P8 | Wooden Table Lamp | 899.00 | 18% |
 
-## Example
+## GST Calculation
 
-For product IDs `['P1', 'P3', 'P5']` and quantities `[2, 1, 1]`:
-
-- Subtotal before GST: Rs. 1834.00
-- Total GST: Rs. 293.22
-- Total payable: Rs. 2127.22
+- GST amount = (Unit price × Quantity × GST rate) / 100
+- Line total = (Unit price × Quantity) + GST amount
 
 ## Python Concepts Used
 
-- Dictionaries and lists
-- Functions
-- Loops and conditional statements
-- `zip()` for iterating over product IDs and quantities
-- Numeric types and arithmetic operations
-- Input handling and safe literal parsing with `ast.literal_eval()`
-- String formatting with f-strings
+Dictionaries, functions, loops, conditionals, input validation, arithmetic operations, Tkinter widgets, event-driven programming, and string formatting.
 
 ## Student Details
 
@@ -80,7 +80,5 @@ For product IDs `['P1', 'P3', 'P5']` and quantities `[2, 1, 1]`:
 - **Course:** B.Tech CSE (General)
 - **Class & Section:** CSE-Gen (D)
 - **Faculty:** Ms. Sujithra G
-
-## License
 
 This project was created as an academic mini project.
